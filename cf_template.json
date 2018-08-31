@@ -1,0 +1,38 @@
+{
+  "AWSTemplateFormatVersion":"2010-09-09",
+  "Transform": "AWS::Serverless-2016-10-31",
+  "Description": "Trial Lambda Pipeline Cloudformation deploy",
+  "Parameters":{
+    "Resources":{
+      "TestLambdaRole":{
+        "Type":"AWS::IAM::Role",
+        "Properties":{
+          "AssumeRolePolicyDocument":{
+            "Version": "2012-10-17",
+            "Statement":[
+              {
+                "Effect":"Allow",
+                "Action":[
+                  "sns:Publish"
+                ] ,
+                "Resource":[
+                  "*"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "TestLambda":{
+        "Type":"AWS::Serverless::Function",
+        "Properties":{
+          "Handler":"test_lambda_code.run_test_lambda",
+          "Description":"Test Lambda Deployed through CodePipeline and Cloudformation",
+          "Runtime":"python3.6",
+          "Timeout":"200",
+          "Role":"!GetAtt TestLambdaRole.Arn", 
+        }
+      }
+    }
+  }
+}
