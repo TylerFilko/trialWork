@@ -1,6 +1,5 @@
 {
   "AWSTemplateFormatVersion":"2010-09-09",
-  "Transform": "AWS::Serverless-2016-10-31",
   "Description": "Trial Lambda Pipeline Cloudformation deploy",
   "Parameters":{
     "Resources":{
@@ -30,7 +29,7 @@
           "Description":"Test Lambda Deployed through CodePipeline and Cloudformation",
           "Runtime":"python3.6",
           "Timeout":"200",
-          "Role":"!GetAtt TestLambdaRole.Arn", 
+          "Role":"!GetAtt TestLambdaRole.Arn",
         }
       }
     }
