@@ -29,7 +29,7 @@
           "Description":"Test Lambda Deployed through CodePipeline and Cloudformation",
           "Runtime":"python3.6",
           "Timeout":"200",
-          "Role":"!GetAtt TestLambdaRole.Arn",
+          "Role":"!GetAtt TestLambdaRole.Arn"
         }
       }
     }
