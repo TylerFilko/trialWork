@@ -1,8 +1,14 @@
 {
   "AWSTemplateFormatVersion":"2010-09-09",
   "Description": "Trial Lambda Pipeline Cloudformation deploy",
-  "Parameters":{
     "Resources":{
+      "Tests3Bucket":{
+        "Type":"AWS::S3::Bucket",
+        "Properties":{
+          "AccessControl":"Private",
+          "BucketName": "TrialDeploymentBucket"
+        }
+      },
       "TestLambdaRole":{
         "Type":"AWS::IAM::Role",
         "Properties":{
@@ -10,15 +16,43 @@
             "Version": "2012-10-17",
             "Statement":[
               {
-                "Effect":"Allow",
+                "Effect": "Allow",
+                "Principal":{
+                  "Service": [
+                    "lambda.amazonaws.com"
+                  ]
+                },
                 "Action":[
-                  "sns:Publish"
-                ] ,
-                "Resource":[
-                  "*"
+                  "sts:AssumeRole"
                 ]
               }
             ]
+          },
+              "Path": "/",
+              "Policies":[
+                {
+                  "PolicyName":"LogCreationPolicy",
+                  "PolicyDocument":{
+                    "Version":"2012-10-17",
+                    "Statement":[
+                      {
+                        "Effect":"Allow",
+                        "Action":"s3:*",
+                        "Resource":"*"
+                      },
+                      {
+                        "Effect":"Allow",
+                        "Action":[
+                          "logs:CreateLogGroup",
+                          "logs:CreateLogStream",
+                          "logs:PutLogEvents"
+                        ],
+                        "Resource":"arn:aws:logs:*:*:*"
+                      }
+                    ]
+                  }
+                }
+              ]
           }
         }
       },
@@ -34,9 +68,11 @@
               "TestLambdaRole",
               "Arn"
             ]
-            }
+          },
+          "CodeUri":{
+            "Bucket": "codepipeline-us-east-1-110122302905",
+            "Key": "TrialPipeline/MyApp/s0FDCx.zip"
+          }
         }
       }
     }
-  }
-}
