@@ -6,7 +6,7 @@
         "Type":"AWS::S3::Bucket",
         "Properties":{
           "AccessControl":"Private",
-          "BucketName": "trial_deployment_bucket"
+          "BucketName": "trial-deployment-bucket"
         }
       },
       "TestLambdaRole":{
