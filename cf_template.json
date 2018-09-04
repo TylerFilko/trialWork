@@ -54,10 +54,9 @@
                 }
               ]
           }
-        }
-      },
+        },
       "TestLambda":{
-        "Type":"AWS::Serverless::Function",
+        "Type":"AWS::Lambda::Function",
         "Properties":{
           "Handler":"test_lambda_code.run_test_lambda",
           "Runtime":"python3.6",
@@ -75,3 +74,4 @@
         }
       }
     }
+}
