@@ -67,7 +67,7 @@
               "Arn"
             ]
           },
-          "CodeUri":{
+          "Code":{
             "S3Bucket":"codepipeline-us-east-1-110122302905",
             "S3Key":"TrialPipeLine/MyApp/8SURdRZ.zip"
           }
