@@ -60,7 +60,6 @@
         "Type":"AWS::Serverless::Function",
         "Properties":{
           "Handler":"test_lambda_code.run_test_lambda",
-          "Description":"Test Lambda Deployed through CodePipeline and Cloudformation",
           "Runtime":"python3.6",
           "Timeout":"200",
           "Role":{
@@ -71,7 +70,7 @@
           },
           "CodeUri":{
             "S3Bucket": "codepipeline-us-east-1-110122302905",
-            "S3Key": "TrialPipeline/MyApp/s0FDCx.zip"
+            "S3Key": "TrialPipeLine/MyApp/8SURdRZ.zip"
           }
         }
       }
