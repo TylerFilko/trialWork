@@ -58,7 +58,7 @@
       "TestLambda":{
         "Type":"AWS::Lambda::Function",
         "Properties":{
-          "Handler":"test_lambda_code.run_test_lambda",
+          "Handler":"threading_lambda.threading_test_lambda",
           "Runtime":"python3.6",
           "Timeout":"200",
           "Role":{
