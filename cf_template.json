@@ -69,7 +69,7 @@
           },
           "Code":{
             "S3Bucket":"codepipeline-us-east-1-110122302905",
-            "S3Key":"TrialPipeLine/MyApp/8SURdRZ.zip"
+            "S3Key":"TrialPipeLine/MyApp/6X10Lya.zip"
           }
         }
       }
