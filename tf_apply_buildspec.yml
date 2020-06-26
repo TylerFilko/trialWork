@@ -1,0 +1,17 @@
+version: 0.2
+
+env:
+  variables:
+    AWS_ACCOUNT_ID: "969690358446"
+  # parameter-store:
+  #   key: "value"
+  #   key: "value"
+  # secrets-manager:
+  #   key: secret-id:json-key:version-stage:version-id
+  # git-credential-helper: no | yes
+
+phases:
+  pre_build:
+    commands:
+      - echo "Terraform Apply"
+      - echo "not doing anything right now"
