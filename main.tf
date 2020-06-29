@@ -18,6 +18,6 @@ resource "aws_s3_bucket" "test-tf-pipeline-bucket" {
 
   tags = {
     Name        = "delete_me"
-    Environment = "delete_me"
+    Environment = "delete_me_please"
   }
 }
