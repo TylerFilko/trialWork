@@ -15,4 +15,5 @@ phases:
     commands:
       - terraform init
       - terraform plan
-      
+      - echo "completed"
+
