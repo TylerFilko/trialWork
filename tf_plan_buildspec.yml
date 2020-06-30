@@ -13,7 +13,8 @@ env:
 phases:
   pre_build:
     commands:
+      - echo "Terraform Plan"
       - terraform init
       - terraform plan
-      - echo "completed"
-
+      - echo "Ran TF Plan"
+      - echo "try aga"
