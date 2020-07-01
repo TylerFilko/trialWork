@@ -17,4 +17,3 @@ phases:
       - terraform init
       - terraform plan
       - echo "Ran TF Plan"
-      - echo "trying again"
